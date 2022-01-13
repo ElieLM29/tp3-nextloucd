@@ -28,7 +28,7 @@ apt-get install git & terraform
 https://github.com/ElieLM29/tp3-nextloucd.git 
 ```
 
-## 2 - Appliquer la configuration avec Terraform
+## 2 - Infra as Code avec Terraform
 
 Nos fichiers .tf sont actuellement configuré afin de créer nos instances chez Scaleway.
 Cela créera :
