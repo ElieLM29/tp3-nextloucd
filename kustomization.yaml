@@ -1,0 +1,22 @@
+resources: 
+
+
+# Ingress
+- nextcloud-ingress.yaml
+
+# Persistent volume claims
+- mariadb-pvc.yaml
+- nextcloud-pvc.yaml
+
+# Services
+- redis-service.yaml
+- mariadb-service.yaml
+- nextcloud-service.yaml
+
+# Secrets
+- mariadb-secrets.yaml
+
+# Deployments
+- redis-deployment.yaml
+- mariadb-deployment.yaml
+- nextcloud-deployment.yaml
