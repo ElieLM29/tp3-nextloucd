@@ -5,8 +5,8 @@ resources:
 - nextcloud-ingress.yaml
 
 # Persistent volume claims
-- mariadb-pvc.yaml
-- nextcloud-pvc.yaml
+# - mariadb-pvc.yaml
+# - nextcloud-pvc.yaml
 
 # Services
 - redis-service.yaml

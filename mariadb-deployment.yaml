@@ -14,10 +14,10 @@ spec:
       labels:
         app: mariadb 
     spec:
-      volumes:
-      - name: mariadb-data
-        persistentVolumeClaim:
-          claimName: mariadb-pvc
+      #volumes:
+      #- name: mariadb-data
+        #persistentVolumeClaim:
+          #claimName: mariadb-pvc
       containers:
       - name: mariadb 
         image: mariadb:latest 
@@ -28,26 +28,14 @@ spec:
           - --binlog-format=ROW
           - --max-connections=1000
         env:
-            - name: MYSQL_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  key: MYSQL_DATABASE
-                  name: mariadb-secrets
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: MYSQL_PASSWORD
-                  name: mariadb-secrets
-            - name: MYSQL_USER
-              valueFrom:
-                secretKeyRef:
-                  key: MYSQL_USER
-                  name: mariadb-secrets
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: MYSQL_ROOT_PASSWORD
-                  name: mariadb-secrets
-        volumeMounts:
-        - name: mariadb-data
-          mountPath: /var/lib/mysql
+            - name: mysql-database
+              value: nextcloud
+            - name: mysql-password
+              value: nextcloud
+            - name: mysql-user
+              value: nextcloud
+            - name: mysql-root-password
+              value: nextcloud
+        #volumeMounts:
+        #- name: mariadb-data
+          #mountPath: /var/lib/mysql
