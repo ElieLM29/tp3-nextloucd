@@ -34,7 +34,7 @@ spec:
               value: nextcloud
             - name: mysql-user
               value: nextcloud
-            - name: mysql-root-password
+            - name: MARIADB_ROOT_PASSWORD
               value: nextcloud
         #volumeMounts:
         #- name: mariadb-data
