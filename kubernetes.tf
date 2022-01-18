@@ -37,7 +37,7 @@
     cluster_id  = scaleway_k8s_cluster.test-tf-k8s.id
     name        = "test-tf-k8s"
     node_type   = "DEV1-M"
-    size        = 1
+    size        = 2
     autoscaling = true
     autohealing = true
     min_size    = 1
