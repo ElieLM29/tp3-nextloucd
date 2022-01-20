@@ -1,22 +1,16 @@
-apiVersion: extensions/v1beta1
-#apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nextcloud-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    cert-manager.io/acme-challenge-type: http01
 spec:
-  tls:
-  - hosts: 
-    - nextcloud.elie-test.fr 
-    secretName: nextcloud-tls 
   rules:
-  - host: nextcloud.elie-test.fr 
-    http: 
-      paths: 
-      - path: /
-        backend:
-          serviceName: nextcloud
-          servicePort: 80
+    - host: elie-test.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nextcloud
+                port:
+                  number: 80

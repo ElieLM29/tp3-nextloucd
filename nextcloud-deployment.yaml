@@ -39,7 +39,7 @@ spec:
             - name: NEXTCLOUD_ADMIN_USER
               value: "admin"
             - name: NEXTCLOUD_TRUSTED_DOMAINS 
-              value: elie-test.fr 
+              value: / 
           #volumeMounts:
             #- mountPath: /var/www/html
               #name: nextcloud-storage

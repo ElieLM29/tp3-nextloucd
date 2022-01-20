@@ -20,3 +20,4 @@ resources:
 - redis-deployment.yaml
 - mariadb-deployment.yaml
 - nextcloud-deployment.yaml
+
