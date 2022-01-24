@@ -75,10 +75,12 @@ terraform apply
 
 Une fois le cluster Kubernetes créé, il faudra télécharger le fichier kubeconfig.yaml, depuis l'espace client Scaleway, en cliquant sur l'onglet Kubernetes, puis sur votre instance, et vous verrez le lien de téléchargement en bas de la page.
 
+Activez également l'option "Deploy an Ingress Controller" et sélectionnez "Ningx".
+
 Lorsque vous aurez récupéré votre fichier, copiez-collez le contenu de ce dernier dans le fichier `kubeconfig.yml` présent à la racine de notre repos GIT et lancez la commande : 
 
 ```
-export KUBECONFIG=kubeconfig.yaml 
+export KUBECONFIG=kubeconfig.yml 
 ```
 puis :
 ```
