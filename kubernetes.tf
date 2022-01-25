@@ -12,13 +12,13 @@
    profile = "myProfile"
   }
 
+
 # Création d'une instance Kubernetes
 
   resource "scaleway_k8s_cluster" "test-tf-k8s" {
     name             = "test-tf-k8s"
     description      = "cluster generate with terraform"
     version          = "1.23.0"
-    #cni              = "calico"
     cni              = "cilium"
     tags             = ["elie"]
 
@@ -36,7 +36,7 @@
   resource "scaleway_k8s_pool" "test-tf-k8s" {
     cluster_id  = scaleway_k8s_cluster.test-tf-k8s.id
     name        = "test-tf-k8s"
-    node_type   = "DEV1-M"
+    node_type   = "GP1-XS"
     size        = 1
     autoscaling = true
     autohealing = true
