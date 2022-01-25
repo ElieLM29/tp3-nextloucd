@@ -90,7 +90,7 @@ terraform apply
 
 Une fois le cluster Kubernetes créé, il faudra télécharger le fichier kubeconfig.yaml, depuis l'espace client Scaleway, en cliquant sur l'onglet Kubernetes, puis sur votre instance, et vous verrez le lien de téléchargement en bas de la page.
 
-Pensez également à activer l'option "Deploy an Ingress Controller" et sélectionnez "Ningx".
+Pensez également à activer l'option "Déployer un ingress controller " et sélectionnez "Ningx".
 
 Lorsque vous aurez récupéré votre fichier, copiez-collez le contenu de ce dernier dans le fichier `kubeconfig.yml` présent à la racine de notre repos GIT et lancez la commande : 
 
@@ -118,3 +118,13 @@ kubectl get ing
 Il faudra ensuite faire pointer votre nom de domaine vers cette adresse IP pour accéder à votre Nextcloud.
 
 Pensez également à éditer le fichier de configuration `nextcloud-ingress.yaml` afin de remplacer le host par votre nom de domaine.
+
+## Optimisation :
+
+Par contrainte de temps, nous avons avant tout priviligié l'automatisation et le fonctionnement de la solution Nextcloud.
+
+Cependant, notre POC peut être amélioré de plusieurs manières. 
+
+La première, serait de mettre en place un fichier secret, pour nos mots de passes. 
+
+La seconde, il faudrait que les données Nextcloud, et de la base de données utilisent un stockage type block storage, ou object storage. Car pour l'instant, si un pod se fait supprimer, le stockage des données est perdu, ce qui est évidemment pas possible sur un environnement en prod.
