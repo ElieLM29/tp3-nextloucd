@@ -2,9 +2,9 @@
 
 ## Prérequis :
 
-- Avoir un nom de domaine
+Avoir un nom de domaine
 
-- Créer un fichier de configuration avec nos credentials Scaleway pour pouvoir intéragir avec leurs API (Cf: https://registry.terraform.io/providers/scaleway/scaleway/latest/docs#shared-configuration-file) 
+Créer un fichier de configuration avec nos credentials Scaleway pour pouvoir intéragir avec leurs API (Cf: https://registry.terraform.io/providers/scaleway/scaleway/latest/docs#shared-configuration-file) 
 
 Pour faire court, il faut créer un fichier dans votre home `$HOME/.config/scw/config.yaml` puis, coller ceci à l'intérieur de votre fichier :
 
@@ -22,7 +22,9 @@ profiles:
 ```
 Vous devrez ensuite modifier les différentes valeurs afin d'y renseigner vos crédentials Scaleway et la zone et région souhaitée. Ces crédentials sont visibles dans votre espace client en cliquant sur votre nom, puis "Identifiants".
 
-- Installer kubectl pour intéragir avec Kubernetes
+### Pour le reste des informations ci-dessous, il est déconseillé d'effectuer ces commandes en tant que root
+
+Installez kubectl pour intéragir avec Kubernetes
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
@@ -36,13 +38,13 @@ Déplacez le binaire dans votre PATH
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
-- Installer les paquets : 
+Installez les paquets : 
 
 ```
 sudo apt-get install git
 ```
 
-- Installer Terraform : 
+- Installez Terraform : 
 
 ```
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
